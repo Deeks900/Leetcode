@@ -29,7 +29,7 @@ public:
             int firstMask = 1 << (p[0]-'a');
             int maskPuzzle = createBitmask(p.substr(1));
             int submask = maskPuzzle;
-            int count = countWords.find(firstMask) != countWords.end() ? countWords[firstMask] : 0;
+            int count = countWords[firstMask];
             
             
             //iterating through all the subsets of this puzzle
