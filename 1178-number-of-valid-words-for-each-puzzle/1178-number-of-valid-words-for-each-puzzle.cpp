@@ -27,15 +27,15 @@ public:
             
             //working on each puzzle
             int firstMask = 1 << (p[0]-'a');
-            int maskPuzzle = createBitmask(p.substr(1));
+            int maskPuzzle = createBitmask(p);
             int submask = maskPuzzle;
-            int count = countWords[firstMask];
+            int count = 0;
             
             
             //iterating through all the subsets of this puzzle
             while(submask){
-                if(countWords.find(submask|firstMask) != countWords.end()){
-                    count += countWords[submask|firstMask];
+                if(submask&firstMask && countWords.find(submask) != countWords.end()){
+                    count += countWords[submask];
                 }
                 //one rightmost bit will be turned off and all digits to the right of this bit will be set.
                 submask -= 1;
