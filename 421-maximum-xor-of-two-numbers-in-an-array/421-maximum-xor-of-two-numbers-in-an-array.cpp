@@ -5,12 +5,14 @@ public:
         int maxXor = 0;
         //This will be storing the prefixes 
         unordered_set<int> prefixes;
+        int mask = 0;
+        int maxPossible = 0;
         
         //Traversing the 32 bits of an integer
         for(int i = 31; i >= 0; i--){
             //mask for this bit
-            int mask = (mask|(1<<i));
-            int maxPossible = (maxXor|(1 << i));
+            mask = (mask|(1<<i));
+            maxPossible = (maxXor|(1 << i));
             //Traversing the array elements
             for(int j = 0; j < nums.size(); j++){
                 //Inserting the prefixes in the set
