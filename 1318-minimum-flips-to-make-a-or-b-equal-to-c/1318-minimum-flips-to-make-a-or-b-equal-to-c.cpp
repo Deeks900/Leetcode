@@ -18,19 +18,19 @@ public:
             }
             
             //Now dealing with the cases
-            if(ci == true){
-                if((ai == false)&&(bi == false)){
+            if(ci){
+                if(!ai && !bi){
                     count++;
                 }
             }
             else{
-               if((ai == true)&&(bi == false)){
+               if(ai&&!bi){
                     count++;
                 }
-                else if((ai == false)&&(bi == true)){
+                else if(!ai&&bi){
                     count++;
                 }
-                else if((ai == true)&&(bi == true)){
+                else if(ai&&bi){
                     count += 2;
                 }
             }
